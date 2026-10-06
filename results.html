@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resultados: Segurança Digital</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site">
+    <h1>Segurança Digital: golpes no WhatsApp e Pix</h1>
+    <p>Resultados do questionário</p>
+  </header>
+  <nav class="site" aria-label="Menu principal">
+    <a href="index.html">Cartilha</a>
+    <a href="quiz.html">Questionário</a>
+    <a href="results.html" aria-current="page">Resultados</a>
+  </nav>
+
+  <main>
+    <h2>Resultados registrados neste aparelho</h2>
+    <p id="empty">Ainda não há respostas registradas neste aparelho.</p>
+
+    <div id="data" class="hidden">
+      <h3>Acertos por participante</h3>
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="left">Participante</th>
+            <th>Antes (de <span id="total-before"></span>)</th>
+            <th>Depois (de <span id="total-after"></span>)</th>
+            <th>Diferença</th>
+          </tr>
+        </thead>
+        <tbody id="summary-body"></tbody>
+      </table>
+      </div>
+
+      <h3>Participantes que acertaram cada pergunta</h3>
+      <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="left">Pergunta</th>
+            <th>Antes</th>
+            <th>Depois</th>
+          </tr>
+        </thead>
+        <tbody id="question-body"></tbody>
+      </table>
+      </div>
+
+      <p class="no-print">
+        <button type="button" id="export">Exportar tabela (CSV)</button>
+        <button type="button" class="danger" id="clear">Apagar registros</button>
+      </p>
+    </div>
+  </main>
+
+  <footer class="site">
+    Os resultados são anônimos e ficam guardados somente neste aparelho.
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/results.js"></script>
+</body>
+</html>
