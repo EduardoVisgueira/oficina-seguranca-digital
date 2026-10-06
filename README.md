@@ -23,6 +23,33 @@ O site não pede nome nem dado pessoal. Cada pessoa recebe apenas um número de 
 respostas ficam guardadas somente no aparelho em que o questionário foi respondido (`localStorage`) e
 não são enviadas para nenhum servidor.
 
+A única requisição externa do site é a da fonte tipográfica, carregada do Google Fonts. Sem acesso
+à Internet o site continua funcionando com a fonte do próprio aparelho.
+
+## Identidade visual
+
+A cartilha abre com uma mensagem de golpe e as pistas marcadas de amarelo, como em uma folha
+riscada com marca-texto. As cores têm sempre o mesmo significado:
+
+| Cor | Código | Onde aparece |
+|---|---|---|
+| Papel | `#FFFFFF` | Fundo |
+| Tinta azul-noite | `#152A45` | Texto, títulos e botões |
+| Marca-texto | `#FFE14A` | Somente sobre uma pista de golpe |
+| Verde | `#0F6B4F` | Somente em "O que fazer" e nos acertos |
+| Vermelho | `#B3261E` | Passos de emergência, erros e exclusão de registros |
+| Cinza-conversa | `#E4EAEE` | Fundo das mensagens de exemplo |
+
+A fonte é a Atkinson Hyperlegible Next, criada pelo Braille Institute para leitores com baixa
+visão. Ela diferencia letras e números parecidos (0 e O, 1 e l), o que ajuda em um material sobre
+códigos, senhas e chaves Pix.
+
+Há uma única animação automática: na abertura, as mensagens do exemplo chegam uma a uma e as pistas
+são marcadas em sequência. Ela não roda para quem pede menos movimento nas configurações do
+aparelho. O restante só responde a uma ação: o link do golpe de exemplo avisa quem clicou, a lista
+"Proteja sua conta" pode ser marcada item a item (sem guardar nada no aparelho) e o questionário
+mostra quais perguntas já foram respondidas.
+
 ## Como usar na oficina
 
 1. Abra o questionário em um único aparelho e peça que cada participante responda "antes da oficina".
@@ -41,6 +68,7 @@ results.html    resultados e exportação
 css/style.css   estilos
 js/questions.js perguntas e gabarito
 js/storage.js   registro local e cálculo dos resultados
+js/booklet.js   interações da cartilha
 js/quiz.js      fluxo do questionário
 js/results.js   tela de resultados
 docs/           requisitos, plano de gerência de configuração e roteiro da oficina

@@ -31,10 +31,11 @@ As versões seguem o formato `MAIOR.MENOR.CORREÇÃO` e são marcadas com tags n
 |---|---|---|
 | v0.1.0 | Cartilha | Página da cartilha, estilos e descrição do projeto |
 | v0.2.0 | Questionário | Questionário antes/depois, registro local e página de resultados |
-| v1.0.0 | Oficina | Versão usada na oficina: site completo, requisitos, plano e roteiro |
+| v1.0.0 | Site completo | Site completo, requisitos, plano e roteiro |
+| v1.1.0 | Oficina | Versão usada na oficina: identidade visual própria e interações da cartilha e do questionário |
 
-Correções feitas depois da oficina entram como `v1.0.x`. Mudanças de conteúdo motivadas pelo retorno
-dos participantes entram como `v1.1.0`.
+Correções feitas depois da oficina entram como `v1.1.x`. Mudanças de conteúdo motivadas pelo retorno
+dos participantes entram como `v1.2.0`.
 
 ## Controle de mudanças
 
@@ -45,14 +46,14 @@ dos participantes entram como `v1.1.0`.
 
 ## Auditoria de configuração
 
-Auditoria da baseline v1.0.0, feita antes da oficina.
+Auditoria da baseline v1.1.0, feita antes da oficina.
 
 | # | Verificação | Resultado |
 |---|---|---|
 | 1 | O código e a documentação estão versionados no GitHub? | (X) Sim ( ) Não |
 | 2 | Cada baseline possui uma tag no repositório? | (X) Sim ( ) Não |
 | 3 | Os requisitos funcionais RF01 a RF08 estão implementados? | (X) Sim ( ) Não |
-| 4 | O teste ponta a ponta passa por completo (22 verificações)? | (X) Sim ( ) Não |
+| 4 | O teste ponta a ponta passa por completo (28 verificações)? | (X) Sim ( ) Não |
 | 5 | O site publicado no GitHub Pages está acessível? | (X) Sim ( ) Não |
 | 6 | O registro do questionário guarda somente dados anônimos (RNF01)? | (X) Sim ( ) Não |
 | 7 | As páginas cabem em tela de celular sem corte (RNF02)? | (X) Sim ( ) Não |
