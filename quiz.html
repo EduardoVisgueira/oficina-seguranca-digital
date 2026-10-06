@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Questionário: Segurança Digital</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site">
+    <h1>Segurança Digital: golpes no WhatsApp e Pix</h1>
+    <p>Questionário da oficina</p>
+  </header>
+  <nav class="site" aria-label="Menu principal">
+    <a href="index.html">Cartilha</a>
+    <a href="quiz.html" aria-current="page">Questionário</a>
+    <a href="results.html">Resultados</a>
+  </nav>
+
+  <main>
+    <section id="step-moment">
+      <h2>Quando você está respondendo?</h2>
+      <p>
+        O questionário é anônimo: não pedimos nome nem dado pessoal. Cada pessoa recebe apenas um número
+        de participante. As respostas ficam guardadas somente neste aparelho.
+      </p>
+
+      <div class="card">
+        <h3>Antes da oficina</h3>
+        <p>Responda com o que você já sabe. Não há problema em errar.</p>
+        <button type="button" id="start-before">Responder antes da oficina</button>
+      </div>
+
+      <div class="card">
+        <h3>Depois da oficina</h3>
+        <div id="after-box">
+          <label for="participant-select">Qual é o seu número de participante?</label><br>
+          <select id="participant-select"></select><br>
+          <button type="button" id="start-after">Responder depois da oficina</button>
+        </div>
+        <p id="after-empty" class="hidden">
+          Disponível depois que alguém responder o questionário "antes da oficina" neste aparelho.
+        </p>
+      </div>
+    </section>
+
+    <section id="step-quiz" class="hidden">
+      <h2 id="quiz-title">Questionário</h2>
+      <p id="participant-label"></p>
+      <form id="quiz-form">
+        <div id="questions"></div>
+        <button type="submit">Registrar respostas</button>
+      </form>
+    </section>
+
+    <section id="step-done" class="hidden">
+      <h2>Obrigado!</h2>
+      <p id="done-message"></p>
+      <div id="review"></div>
+      <button type="button" id="next-participant">Próximo participante</button>
+      <a class="button" href="index.html">Voltar à cartilha</a>
+    </section>
+  </main>
+
+  <footer class="site">
+    Este site não coleta nomes nem dados pessoais. As respostas ficam somente neste aparelho.
+  </footer>
+
+  <script src="js/questions.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/quiz.js"></script>
+</body>
+</html>
