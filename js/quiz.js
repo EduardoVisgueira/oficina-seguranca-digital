@@ -19,10 +19,11 @@
     QUESTIONS.forEach((q, i) => {
       const fieldset = document.createElement('fieldset');
       const legend = document.createElement('legend');
-      legend.textContent = `Pergunta ${i + 1} de ${QUESTIONS.length}`;
-      const text = document.createElement('p');
-      text.textContent = q.text;
-      fieldset.append(legend, text);
+      const count = document.createElement('span');
+      count.className = 'question-count';
+      count.textContent = `Pergunta ${i + 1} de ${QUESTIONS.length}`;
+      legend.append(count, document.createTextNode(q.text));
+      fieldset.append(legend);
       q.options.forEach((option, j) => {
         const label = document.createElement('label');
         label.className = 'option';
@@ -36,6 +37,20 @@
       });
       holder.append(fieldset);
     });
+    $('progress-marks').replaceChildren(...QUESTIONS.map(() => document.createElement('span')));
+    updateProgress();
+  }
+
+  function updateProgress() {
+    const data = new FormData(form);
+    const marks = $('progress-marks').children;
+    let done = 0;
+    QUESTIONS.forEach((_, i) => {
+      const answered = data.has(`q${i}`);
+      if (answered) done++;
+      marks[i].classList.toggle('done', answered);
+    });
+    $('progress-text').textContent = `${done} de ${QUESTIONS.length} respondidas`;
   }
 
   function start(chosenMoment, chosenParticipant) {
@@ -52,9 +67,11 @@
     const message = $('done-message');
     const review = $('review');
     review.innerHTML = '';
+    $('ticket').classList.toggle('hidden', record.moment !== 'before');
     if (record.moment === 'before') {
+      $('ticket-number').textContent = record.participant;
       message.textContent =
-        `Respostas registradas. Você é o Participante ${record.participant}. ` +
+        `Você é o Participante ${record.participant}. ` +
         'Guarde este número: ele será usado no questionário depois da oficina.';
       return;
     }
@@ -62,16 +79,23 @@
       `Participante ${record.participant}: você acertou ${record.score} de ${QUESTIONS.length} perguntas.`;
     QUESTIONS.forEach((q, i) => {
       const item = document.createElement('div');
-      item.className = 'card';
+      item.className = 'review-item';
       const title = document.createElement('h3');
-      title.textContent = `Pergunta ${i + 1}`;
+      title.textContent = `${i + 1}. ${q.text}`;
+      item.append(title);
+      if (record.answers[i] !== q.answer) {
+        const yours = document.createElement('p');
+        yours.className = 'yours';
+        yours.textContent = `Você marcou: ${q.options[record.answers[i]]}`;
+        item.append(yours);
+      }
       const right = document.createElement('p');
       right.className = 'correct';
       right.textContent = `Resposta correta: ${q.options[q.answer]}`;
       const why = document.createElement('p');
       why.className = 'feedback';
       why.textContent = q.explanation;
-      item.append(title, right, why);
+      item.append(right, why);
       review.append(item);
     });
   }
@@ -97,6 +121,8 @@
   $('start-after').addEventListener('click', () => {
     start('after', Number($('participant-select').value));
   });
+
+  form.addEventListener('change', updateProgress);
 
   form.addEventListener('submit', (event) => {
     event.preventDefault();

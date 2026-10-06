@@ -4,11 +4,12 @@
   const total = QUESTIONS.length;
   const show = (value) => (value === null ? '–' : String(value));
 
-  function addRow(tbody, cells) {
+  function addRow(tbody, cells, lastCellClass) {
     const tr = document.createElement('tr');
     cells.forEach((value, i) => {
       const td = document.createElement('td');
       if (i === 0) td.className = 'left';
+      if (lastCellClass && i === cells.length - 1) td.className = lastCellClass;
       td.textContent = value;
       tr.append(td);
     });
@@ -30,7 +31,8 @@
     summaryBody.innerHTML = '';
     summary.forEach((row) => {
       const diff = row.difference === null ? '–' : (row.difference > 0 ? '+' : '') + row.difference;
-      addRow(summaryBody, [`Participante ${row.participant}`, show(row.before), show(row.after), diff]);
+      const trend = row.difference > 0 ? 'gain' : row.difference < 0 ? 'loss' : '';
+      addRow(summaryBody, [`Participante ${row.participant}`, show(row.before), show(row.after), diff], trend);
     });
 
     const questionBody = $('question-body');

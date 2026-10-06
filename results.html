@@ -4,62 +4,80 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Resultados: Segurança Digital</title>
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23152a45'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23ffe14a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site">
-    <h1>Segurança Digital: golpes no WhatsApp e Pix</h1>
-    <p>Resultados do questionário</p>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="masthead-name" href="index.html">Oficina de segurança digital</a>
+      <nav aria-label="Menu principal">
+        <a href="index.html">Cartilha</a>
+        <a href="quiz.html">Questionário</a>
+        <a href="results.html" aria-current="page">Resultados</a>
+      </nav>
+    </div>
   </header>
-  <nav class="site" aria-label="Menu principal">
-    <a href="index.html">Cartilha</a>
-    <a href="quiz.html">Questionário</a>
-    <a href="results.html" aria-current="page">Resultados</a>
-  </nav>
 
-  <main>
-    <h2>Resultados registrados neste aparelho</h2>
-    <p id="empty">Ainda não há respostas registradas neste aparelho.</p>
+  <main id="conteudo" class="wrap">
+    <div class="page">
+      <h1>Resultados do questionário</h1>
 
-    <div id="data" class="hidden">
-      <h3>Acertos por participante</h3>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th class="left">Participante</th>
-            <th>Antes (de <span id="total-before"></span>)</th>
-            <th>Depois (de <span id="total-after"></span>)</th>
-            <th>Diferença</th>
-          </tr>
-        </thead>
-        <tbody id="summary-body"></tbody>
-      </table>
+      <div id="empty">
+        <p class="lead">Ainda não há respostas registradas neste aparelho.</p>
+        <p>Os resultados aparecem aqui assim que o primeiro participante responder o questionário.</p>
+        <a class="button" href="quiz.html">Abrir o questionário</a>
       </div>
 
-      <h3>Participantes que acertaram cada pergunta</h3>
-      <div class="table-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th class="left">Pergunta</th>
-            <th>Antes</th>
-            <th>Depois</th>
-          </tr>
-        </thead>
-        <tbody id="question-body"></tbody>
-      </table>
-      </div>
+      <div id="data" class="hidden">
+        <p class="lead">Respostas registradas neste aparelho, sem nome nem dado pessoal.</p>
 
-      <p class="no-print">
-        <button type="button" id="export">Exportar tabela (CSV)</button>
-        <button type="button" class="danger" id="clear">Apagar registros</button>
-      </p>
+        <h2>Acertos por participante</h2>
+        <div class="table-wrap">
+        <table class="summary">
+          <thead>
+            <tr>
+              <th class="left">Participante</th>
+              <th>Antes (de <span id="total-before"></span>)</th>
+              <th>Depois (de <span id="total-after"></span>)</th>
+              <th>Diferença</th>
+            </tr>
+          </thead>
+          <tbody id="summary-body"></tbody>
+        </table>
+        </div>
+
+        <h2>Participantes que acertaram cada pergunta</h2>
+        <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th class="left">Pergunta</th>
+              <th>Antes</th>
+              <th>Depois</th>
+            </tr>
+          </thead>
+          <tbody id="question-body"></tbody>
+        </table>
+        </div>
+
+        <div class="actions no-print">
+          <button type="button" id="export">Exportar tabela (CSV)</button>
+          <button type="button" class="danger" id="clear">Apagar registros</button>
+        </div>
+      </div>
     </div>
   </main>
 
-  <footer class="site">
-    Os resultados são anônimos e ficam guardados somente neste aparelho.
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>Os resultados são anônimos e ficam guardados somente neste aparelho.</p>
+    </div>
   </footer>
 
   <script src="js/questions.js"></script>

@@ -64,6 +64,16 @@ const visible = (id) => js(`!document.getElementById('${id}').classList.contains
 await go('index.html');
 check('cartilha: 6 secoes', (await js(`document.querySelectorAll('main h2').length`)) === 6);
 check('cartilha: sem rolagem horizontal', await js(`document.documentElement.scrollWidth <= window.innerWidth`));
+// a sequencia de abertura so comeca quando o exemplo aparece na tela
+await js(`document.querySelector('.specimen').scrollIntoView()`);
+await sleep(3600);
+check('cartilha: abertura termina com as mensagens visiveis',
+  await js(`[...document.querySelectorAll('.specimen .bubble')].every(b => getComputedStyle(b).opacity === '1')`));
+check('cartilha: link de exemplo revela o aviso',
+  await js(`(() => { const c = document.getElementById('caught'); const before = c.hidden; document.getElementById('bait').click(); return before && !c.hidden; })()`));
+check('cartilha: lista de protecao conta os itens',
+  (await js(`(() => { document.querySelector('.checks input').click(); return document.getElementById('checks-count').textContent; })()`)) === '1 de 6 feitos.');
+check('cartilha: nada e guardado no aparelho', (await js(`localStorage.length`)) === 0);
 await shot('site_index.png');
 
 await go('quiz.html');
@@ -75,6 +85,9 @@ await shot('site_quiz_start.png');
 await js(`document.getElementById('start-before').click()`);
 check('participante 1 atribuido', (await js(`document.getElementById('participant-label').textContent`)).includes('Participante 1'));
 check('6 perguntas renderizadas', (await js(`document.querySelectorAll('#questions fieldset').length`)) === 6);
+check('progresso comeca em 0 de 6', (await js(`document.getElementById('progress-text').textContent`)) === '0 de 6 respondidas');
+await js(`document.querySelector('input[name="q0"]').click()`);
+check('progresso acompanha as respostas', (await js(`document.getElementById('progress-text').textContent`)) === '1 de 6 respondidas');
 await shot('site_quiz_questions.png');
 // envio incompleto nao registra
 await js(`document.querySelector('#quiz-form button[type=submit]').click()`);
@@ -82,7 +95,7 @@ check('envio incompleto bloqueado', (await js(`localStorage.getItem('oficina-seg
 await answer('wrong');
 const msg1 = await js(`document.getElementById('done-message').textContent`);
 check('antes: mostra numero e nao mostra acertos', msg1.includes('Participante 1') && !/acertou/.test(msg1), msg1);
-check('antes: nao revela gabarito', (await js(`document.querySelectorAll('#review .card').length`)) === 0);
+check('antes: nao revela gabarito', (await js(`document.querySelectorAll('#review .review-item').length`)) === 0);
 
 await js(`document.getElementById('next-participant').click()`);
 check('"depois" liberado apos um registro', await visible('after-box'));
@@ -96,7 +109,7 @@ await js(`document.getElementById('participant-select').value='1'; document.getE
 await answer('right');
 const msg2 = await js(`document.getElementById('done-message').textContent`);
 check('depois: mostra acertos 6 de 6', msg2.includes('6 de 6'), msg2);
-check('depois: mostra gabarito das 6', (await js(`document.querySelectorAll('#review .card').length`)) === 6);
+check('depois: mostra gabarito das 6', (await js(`document.querySelectorAll('#review .review-item').length`)) === 6);
 await shot('site_quiz_done.png');
 await js(`document.getElementById('next-participant').click()`);
 check('participante 1 sai da lista do "depois"', (await js(`[...document.querySelectorAll('#participant-select option')].map(o=>o.value).join()`)) === '2');
@@ -117,6 +130,7 @@ await shot('site_results.png');
 check('sem erros de JavaScript', errors.length === 0, errors);
 
 console.log(results.join('\n'));
+console.log('Capturas de tela: ' + OUT);
 ws.close(); chrome.kill(); server.close();
 await sleep(500);
 try { fs.rmSync(profile, { recursive: true, force: true }); } catch {}

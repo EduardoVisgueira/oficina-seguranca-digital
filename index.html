@@ -5,124 +5,277 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cartilha de Segurança Digital: golpes no WhatsApp e Pix</title>
   <meta name="description" content="Cartilha gratuita para reconhecer e evitar golpes no WhatsApp e no Pix.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Cartilha de Segurança Digital: golpes no WhatsApp e Pix">
+  <meta property="og:description" content="Aprenda a reconhecer um golpe pela própria mensagem, antes de fazer o Pix.">
+  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23152a45'/%3E%3Crect x='6' y='12' width='20' height='8' fill='%23ffe14a'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400..800&display=swap">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="site">
-    <h1>Segurança Digital: golpes no WhatsApp e Pix</h1>
-    <p>Cartilha gratuita para reconhecer um golpe antes de cair nele.</p>
+  <a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="masthead-name" href="index.html">Oficina de segurança digital</a>
+      <nav aria-label="Menu principal">
+        <a href="index.html" aria-current="page">Cartilha</a>
+        <a href="quiz.html">Questionário</a>
+        <a href="results.html">Resultados</a>
+      </nav>
+    </div>
   </header>
-  <nav class="site" aria-label="Menu principal">
-    <a href="index.html" aria-current="page">Cartilha</a>
-    <a href="quiz.html">Questionário</a>
-    <a href="results.html">Resultados</a>
-  </nav>
 
-  <main>
-    <div class="alert">
-      <strong>Regra de ouro:</strong> se a mensagem pede pressa, dinheiro ou um código, pare.
-      Confirme por outro meio antes de fazer qualquer coisa.
-    </div>
+  <main id="conteudo" class="wrap">
+    <div class="opening">
+      <div>
+        <h1>Antes de fazer o Pix, leia a mensagem de novo.</h1>
+        <p class="lead">
+          Quase todo golpe no WhatsApp deixa pistas na própria mensagem.
+          Esta cartilha mostra onde olhar e o que fazer em cada caso.
+        </p>
+        <p class="golden-rule">
+          <strong>Regra de ouro:</strong> se a mensagem pede pressa, dinheiro ou um código, pare.
+          Confirme por outro meio antes de fazer qualquer coisa.
+        </p>
+      </div>
 
-    <h2 id="sinais">1. Como o golpista age</h2>
-    <p>Quase todo golpe usa as mesmas quatro pressões. Reconhecer uma delas já é meio caminho andado.</p>
-    <div class="card">
-      <h3>Urgência</h3>
-      <p>"Preciso agora", "é só hoje", "sua conta será bloqueada em 10 minutos".</p>
-    </div>
-    <div class="card">
-      <h3>Medo</h3>
-      <p>"Sua conta foi invadida", "há uma compra suspeita no seu nome".</p>
-    </div>
-    <div class="card">
-      <h3>Autoridade</h3>
-      <p>A pessoa diz ser do banco, da operadora, da loja ou de um órgão público.</p>
-    </div>
-    <div class="card">
-      <h3>Vantagem boa demais</h3>
-      <p>Prêmio, promoção, emprego fácil ou dinheiro que você não estava esperando.</p>
-    </div>
-
-    <h2 id="whatsapp">2. Golpes comuns no WhatsApp</h2>
-    <div class="card">
-      <h3>Perfil falso de parente ou amigo</h3>
-      <p>Um número desconhecido usa a foto de alguém próximo e diz "troquei de número". Logo depois pede dinheiro.</p>
-      <p><strong>O que fazer:</strong> ligue para o número antigo da pessoa ou faça uma chamada de vídeo. Não pague antes de confirmar.</p>
-    </div>
-    <div class="card">
-      <h3>Conta clonada</h3>
-      <p>Alguém pede o código de 6 números que chegou por SMS, dizendo que foi enviado por engano ou que é de um cadastro.</p>
-      <p><strong>O que fazer:</strong> nunca informe esse código. Ele é a chave do seu WhatsApp.</p>
-    </div>
-    <div class="card">
-      <h3>Links e mensagens falsas</h3>
-      <p>Promoções, prêmios, vagas de emprego, boletos e avisos de entrega com um link para clicar.</p>
-      <p><strong>O que fazer:</strong> não clique. Procure o site ou o aplicativo oficial por conta própria.</p>
-    </div>
-    <div class="card">
-      <h3>Falso atendimento</h3>
-      <p>Alguém se apresenta como suporte do banco, da operadora ou de uma loja e pede senha, código ou instalação de aplicativo.</p>
-      <p><strong>O que fazer:</strong> encerre a conversa e fale com a empresa pelo canal oficial.</p>
+      <figure class="specimen">
+        <div class="chat">
+          <p class="chat-from">Mensagem de um número que não está nos seus contatos</p>
+          <p class="bubble">Oi mãe, <mark>troquei de número</mark>, salva esse aqui.</p>
+          <p class="bubble">Meu aplicativo do banco travou e preciso pagar uma conta <mark>ainda hoje</mark>. Faz um Pix de R$ 1.850 pra mim? Amanhã eu devolvo.</p>
+          <p class="bubble">A chave é do rapaz da loja, vai aparecer <mark>no nome de outra pessoa</mark>.</p>
+        </div>
+        <figcaption>
+          <p>Isto é um golpe. As três pistas estão marcadas de amarelo:</p>
+          <ul class="clues">
+            <li><mark>troquei de número</mark> Quem escreve é um número novo. Foto e nome qualquer um copia.</li>
+            <li><mark>ainda hoje</mark> A pressa serve para você não ter tempo de confirmar.</li>
+            <li><mark>no nome de outra pessoa</mark> O dinheiro vai para a conta de um desconhecido.</li>
+          </ul>
+        </figcaption>
+      </figure>
     </div>
 
-    <h2 id="pix">3. Golpes com Pix</h2>
-    <div class="card">
-      <h3>Pedido urgente de dinheiro</h3>
-      <p>Mensagem de um conhecido pedindo um Pix imediato, para uma conta em nome de outra pessoa.</p>
-      <p><strong>O que fazer:</strong> confira o nome de quem vai receber. Se não for a pessoa que pediu, não envie.</p>
-    </div>
-    <div class="card">
-      <h3>Falsa central do banco</h3>
-      <p>Ligação dizendo que sua conta foi invadida e que você deve transferir o dinheiro para uma "conta segura".</p>
-      <p><strong>O que fazer:</strong> desligue. Banco não pede transferência, senha nem código por telefone. Ligue você para o número que está no seu cartão.</p>
-    </div>
-    <div class="card">
-      <h3>"Fiz um Pix errado, devolve?"</h3>
-      <p>Alguém envia um valor e pede a devolução para outra chave, ou mostra um comprovante falso.</p>
-      <p><strong>O que fazer:</strong> confira no extrato se o dinheiro entrou. Se entrou, devolva somente pela opção de devolução do aplicativo do banco, nunca com um novo Pix.</p>
-    </div>
-    <div class="card">
-      <h3>Comprovante ou QR Code falso</h3>
-      <p>Comprovante editado, Pix agendado que depois é cancelado, ou QR Code que leva o dinheiro para outra conta.</p>
-      <p><strong>O que fazer:</strong> só considere pago o que aparece no seu extrato. Antes de pagar um QR Code, leia o nome do recebedor na tela.</p>
-    </div>
+    <div class="booklet">
+      <nav class="toc" aria-label="Partes da cartilha">
+        <p class="toc-title">Nesta cartilha</p>
+        <ol>
+          <li><a href="#sinais">Como o golpista age</a></li>
+          <li><a href="#whatsapp">Golpes comuns no WhatsApp</a></li>
+          <li><a href="#pix">Golpes com Pix</a></li>
+          <li><a href="#verificar">Como verificar uma mensagem</a></li>
+          <li><a href="#proteger">Proteja sua conta</a></li>
+          <li><a href="#cai">Caí em um golpe. E agora?</a></li>
+        </ol>
+      </nav>
 
-    <h2 id="verificar">4. Como verificar uma mensagem antes de agir</h2>
-    <ol class="steps">
-      <li><strong>Pare.</strong> Pressa é o principal sinal de golpe.</li>
-      <li><strong>Desconfie.</strong> Número novo, erro de escrita, pedido estranho ou conta em nome de terceiro.</li>
-      <li><strong>Confirme por outro meio.</strong> Ligue para o número que você já tinha ou fale pessoalmente.</li>
-      <li><strong>Confira o recebedor.</strong> No Pix, leia o nome completo antes de confirmar.</li>
-      <li><strong>Na dúvida, não faça.</strong> Peça ajuda a alguém de confiança.</li>
-    </ol>
+      <div class="chapters">
+        <section class="chapter" id="sinais">
+          <h2>1. Como o golpista age</h2>
+          <p>Quase todo golpe usa as mesmas quatro pressões. Reconhecer uma delas já é meio caminho andado.</p>
+          <dl class="pressures">
+            <div>
+              <dt>Urgência</dt>
+              <dd>“Preciso agora”, “é só hoje”, “sua conta será bloqueada em 10 minutos”.</dd>
+            </div>
+            <div>
+              <dt>Medo</dt>
+              <dd>“Sua conta foi invadida”, “há uma compra suspeita no seu nome”.</dd>
+            </div>
+            <div>
+              <dt>Autoridade</dt>
+              <dd>A pessoa diz ser do banco, da operadora, da loja ou de um órgão público.</dd>
+            </div>
+            <div>
+              <dt>Vantagem boa demais</dt>
+              <dd>Prêmio, promoção, emprego fácil ou dinheiro que você não estava esperando.</dd>
+            </div>
+          </dl>
+        </section>
 
-    <h2 id="proteger">5. Proteja sua conta</h2>
-    <ul class="steps">
-      <li><strong>Ative a confirmação em duas etapas do WhatsApp:</strong> Configurações &gt; Conta &gt; Confirmação em duas etapas. Crie um PIN que só você saiba.</li>
-      <li><strong>Nunca compartilhe códigos</strong> recebidos por SMS, e-mail ou aplicativo.</li>
-      <li><strong>Use senhas diferentes</strong> para banco, e-mail e redes sociais. Evite datas de nascimento e sequências como 123456.</li>
-      <li><strong>Limite o Pix:</strong> no aplicativo do banco, reduza o valor máximo, principalmente no período da noite.</li>
-      <li><strong>Deixe a foto do perfil visível só para os seus contatos:</strong> Configurações &gt; Privacidade &gt; Foto do perfil.</li>
-      <li><strong>Mantenha o celular e os aplicativos atualizados</strong> e use bloqueio de tela.</li>
-    </ul>
+        <section class="chapter" id="whatsapp">
+          <h2>2. Golpes comuns no WhatsApp</h2>
 
-    <h2 id="cai">6. Caí em um golpe. E agora?</h2>
-    <ol class="steps">
-      <li><strong>Avise o banco imediatamente</strong> pelo aplicativo ou telefone oficial e peça o Mecanismo Especial de Devolução (MED) do Pix.</li>
-      <li><strong>Registre um boletim de ocorrência.</strong> Guarde as conversas, os comprovantes e os números usados pelo golpista.</li>
-      <li><strong>Avise familiares e contatos</strong> para que não recebam pedidos em seu nome.</li>
-      <li><strong>Se perdeu o acesso ao WhatsApp,</strong> instale o aplicativo de novo e peça um novo código para o seu número.</li>
-      <li><strong>Troque as senhas</strong> das contas que possam ter sido expostas.</li>
-    </ol>
+          <article class="scam">
+            <h3>Perfil falso de parente ou amigo</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por mensagem</p>
+                <p class="bubble">Oi, <mark>troquei de número</mark>. Consegue me fazer um Pix agora?</p>
+              </div>
+              <div class="scam-body">
+                <p>Um número desconhecido usa a foto de alguém próximo e diz “troquei de número”. Logo depois pede dinheiro.</p>
+                <p class="action"><strong>O que fazer:</strong> ligue para o número antigo da pessoa ou faça uma chamada de vídeo. Não pague antes de confirmar.</p>
+              </div>
+            </div>
+          </article>
 
-    <p class="no-print">
-      <a class="button" href="quiz.html">Responder o questionário</a>
-    </p>
+          <article class="scam">
+            <h3>Conta clonada</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por mensagem</p>
+                <p class="bubble">Mandei um <mark>código de 6 números</mark> pro seu celular por engano. Me passa?</p>
+              </div>
+              <div class="scam-body">
+                <p>Alguém pede o código de 6 números que chegou por SMS, dizendo que foi enviado por engano ou que é de um cadastro.</p>
+                <p class="action"><strong>O que fazer:</strong> nunca informe esse código. Ele é a chave do seu WhatsApp.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="scam">
+            <h3>Links e mensagens falsas</h3>
+            <div class="scam-layout">
+              <div>
+                <div class="chat">
+                  <p class="chat-from">Por mensagem</p>
+                  <p class="bubble">Parabéns! Você foi sorteado. <button type="button" class="fake-link" id="bait" aria-expanded="false" aria-controls="caught">Clique aqui</button> e <mark>resgate ainda hoje</mark>.</p>
+                </div>
+                <p class="caught" id="caught" role="status" hidden>
+                  <strong>Você clicou.</strong> Em um golpe de verdade, este link abriria uma página falsa
+                  pedindo seus dados. Aqui era só um teste.
+                </p>
+              </div>
+              <div class="scam-body">
+                <p>Promoções, prêmios, vagas de emprego, boletos e avisos de entrega com um link para clicar.</p>
+                <p class="action"><strong>O que fazer:</strong> não clique. Procure o site ou o aplicativo oficial por conta própria.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="scam">
+            <h3>Falso atendimento</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por mensagem ou ligação</p>
+                <p class="bubble">Aqui é do suporte do seu banco. Para liberar a conta, <mark>informe a senha</mark>.</p>
+              </div>
+              <div class="scam-body">
+                <p>Alguém se apresenta como suporte do banco, da operadora ou de uma loja e pede senha, código ou instalação de aplicativo.</p>
+                <p class="action"><strong>O que fazer:</strong> encerre a conversa e fale com a empresa pelo canal oficial.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="chapter" id="pix">
+          <h2>3. Golpes com Pix</h2>
+
+          <article class="scam">
+            <h3>Pedido urgente de dinheiro</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por mensagem</p>
+                <p class="bubble">Me faz um Pix de R$ 600 agora? <mark>A chave é de um amigo</mark>, depois explico.</p>
+              </div>
+              <div class="scam-body">
+                <p>Mensagem de um conhecido pedindo um Pix imediato, para uma conta em nome de outra pessoa.</p>
+                <p class="action"><strong>O que fazer:</strong> confira o nome de quem vai receber. Se não for a pessoa que pediu, não envie.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="scam">
+            <h3>Falsa central do banco</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por ligação</p>
+                <p class="bubble">Sua conta foi invadida. Transfira o saldo para uma <mark>conta segura</mark>.</p>
+              </div>
+              <div class="scam-body">
+                <p>Ligação dizendo que sua conta foi invadida e que você deve transferir o dinheiro para uma “conta segura”.</p>
+                <p class="action"><strong>O que fazer:</strong> desligue. Banco não pede transferência, senha nem código por telefone. Ligue você para o número que está no seu cartão.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="scam">
+            <h3>“Fiz um Pix errado, devolve?”</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por mensagem</p>
+                <p class="bubble">Te mandei R$ 300 por engano. Devolve <mark>nessa outra chave</mark>?</p>
+              </div>
+              <div class="scam-body">
+                <p>Alguém envia um valor e pede a devolução para outra chave, ou mostra um comprovante falso.</p>
+                <p class="action"><strong>O que fazer:</strong> confira no extrato se o dinheiro entrou. Se entrou, devolva somente pela opção de devolução do aplicativo do banco, nunca com um novo Pix.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="scam">
+            <h3>Comprovante ou QR Code falso</h3>
+            <div class="scam-layout">
+              <div class="chat">
+                <p class="chat-from">Por mensagem</p>
+                <p class="bubble">Já paguei, <mark>olha o comprovante</mark>. Pode liberar o produto.</p>
+              </div>
+              <div class="scam-body">
+                <p>Comprovante editado, Pix agendado que depois é cancelado, ou QR Code que leva o dinheiro para outra conta.</p>
+                <p class="action"><strong>O que fazer:</strong> só considere pago o que aparece no seu extrato. Antes de pagar um QR Code, leia o nome do recebedor na tela.</p>
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <section class="chapter" id="verificar">
+          <h2>4. Como verificar uma mensagem antes de agir</h2>
+          <ol class="steps">
+            <li><strong>Pare.</strong> Pressa é o principal sinal de golpe.</li>
+            <li><strong>Desconfie.</strong> Número novo, erro de escrita, pedido estranho ou conta em nome de terceiro.</li>
+            <li><strong>Confirme por outro meio.</strong> Ligue para o número que você já tinha ou fale pessoalmente.</li>
+            <li><strong>Confira o recebedor.</strong> No Pix, leia o nome completo antes de confirmar.</li>
+            <li><strong>Na dúvida, não faça.</strong> Peça ajuda a alguém de confiança.</li>
+          </ol>
+        </section>
+
+        <section class="chapter" id="proteger">
+          <h2>5. Proteja sua conta</h2>
+          <p class="checks-count" id="checks-count" aria-live="polite">Marque cada item conforme for fazendo.</p>
+          <ul class="checks">
+            <li><label><input type="checkbox"><span><strong>Ative a confirmação em duas etapas do WhatsApp:</strong> <span class="path">Configurações › Conta › Confirmação em duas etapas</span>. Crie um PIN que só você saiba.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Nunca compartilhe códigos</strong> recebidos por SMS, e-mail ou aplicativo.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Use senhas diferentes</strong> para banco, e-mail e redes sociais. Evite datas de nascimento e sequências como 123456.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Limite o Pix:</strong> no aplicativo do banco, reduza o valor máximo, principalmente no período da noite.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Deixe a foto do perfil visível só para os seus contatos:</strong> <span class="path">Configurações › Privacidade › Foto do perfil</span>.</span></label></li>
+            <li><label><input type="checkbox"><span><strong>Mantenha o celular e os aplicativos atualizados</strong> e use bloqueio de tela.</span></label></li>
+          </ul>
+        </section>
+
+        <section class="chapter" id="cai">
+          <h2>6. Caí em um golpe. E agora?</h2>
+          <ol class="steps steps-urgent">
+            <li><strong>Avise o banco imediatamente</strong> pelo aplicativo ou telefone oficial e peça o Mecanismo Especial de Devolução (MED) do Pix.</li>
+            <li><strong>Registre um boletim de ocorrência.</strong> Guarde as conversas, os comprovantes e os números usados pelo golpista.</li>
+            <li><strong>Avise familiares e contatos</strong> para que não recebam pedidos em seu nome.</li>
+            <li><strong>Se perdeu o acesso ao WhatsApp,</strong> instale o aplicativo de novo e peça um novo código para o seu número.</li>
+            <li><strong>Troque as senhas</strong> das contas que possam ter sido expostas.</li>
+          </ol>
+        </section>
+
+        <div class="next-step no-print">
+          <p>Terminou de ler? O questionário da oficina tem seis perguntas.</p>
+          <a class="button" href="quiz.html">Responder o questionário</a>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <footer class="site">
-    Material educativo e gratuito, produzido para a oficina de segurança digital em Fortaleza – CE.
-    Este site não coleta nomes nem dados pessoais.
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>
+        Material educativo e gratuito, produzido para a oficina de segurança digital em Fortaleza – CE.
+        Este site não coleta nomes nem dados pessoais.
+      </p>
+    </div>
   </footer>
+
+  <script src="js/booklet.js"></script>
 </body>
 </html>
